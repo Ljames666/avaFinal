@@ -1,0 +1,96 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  height: 100vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+    sans-serif;
+}
+.brow {
+  color: #b26241;
+  padding-left: 10px;
+}
+
+img,
+.top {
+  margin-top: 130px;
+}
+
+/* Estilização do menu de navegação */
+#containerCard {
+  width: 22%;
+  height: 100%;
+  background-color: #b26241;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+img {
+  height: 170px;
+  width: 170px;
+
+  border-radius: 50%;
+  border: 5px solid #c27f66;
+}
+
+div ul li {
+  margin-top: 10px;
+}
+div ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #dac3bb;
+}
+
+div ul li a:hover {
+  color: white;
+}
+div ul li a:active {
+  color: #dac3bb;
+}
+
+/* Estilização da parte do conteudo */
+#container {
+  width: 77%;
+  height: 100%;
+  display: inline-table;
+  margin-left: -10px;
+  vertical-align: top;
+}
+h1 {
+  font-size: 60px;
+}
+h1,
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#emailHtml {
+  text-transform: lowercase;
+}
+
+.textLeft {
+  margin-left: 50px;
+}
+.text {
+  height: 40%;
+  vertical-align: middle;
+  margin-top: 25px;
+}
+
+#conhecimentos,
+#objetivos {
+  display: none;
+}
+
+/* Estilização da redes sociais */
+i {
+  font-size: 40px;
+  color: #4b5056;
+  margin-top: 30px;
+  padding-right: 15px;
+}
