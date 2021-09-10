@@ -57,7 +57,7 @@ function addAbout() {
         "redeSociaisHtml"
       ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-facebook"></i></a>`;
     }
-    if (rede.includes("github")) {
+    else if (rede.includes("github")) {
       document.getElementById(
         "redeSociaisHtml"
       ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-github"></i></a>`;
