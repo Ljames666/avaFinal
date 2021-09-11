@@ -39,6 +39,7 @@ let objs = {
 let aboutHtml = document.getElementById("sobre");
 let knowledgeHtml = document.getElementById("conhecimentos");
 let objectivesHtml = document.getElementById("objetivos");
+let createLinks = document.querySelector("#redeSociaisHtml");
 addAbout();
 addKnowledge();
 addObjectives();
@@ -52,32 +53,26 @@ function addAbout() {
   document.getElementById("textAbout").innerHTML = objs.about.aboutMe;
   for (const rede of objs.about.redesSociais) {
     console.log(rede);
-    if (rede.includes("facebook")) {
-      document.getElementById(
-        "redeSociaisHtml"
-      ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-facebook"></i></a>`;
+    let aLink;
+    aLink = document.createElement("a");
+    aLink.setAttribute("href", rede);
+    aLink.setAttribute("target", "_blank");
+    aLink.innerText = rede;
+
+    if (aLink.href.indexOf("facebook") !== -1) {
+      aLink.innerHTML = `<i class="fab fa-facebook"></i>`;
+    } else if (aLink.href.indexOf("github") !== -1) {
+      aLink.innerHTML = `<i class="fab fa-github"></i>`;
+    } else if (aLink.href.indexOf("linkedin") !== -1) {
+      aLink.innerHTML = `<i class="fab fa-linkedin"></i>`;
+    } else if (aLink.href.indexOf("instagram") !== -1) {
+      aLink.innerHTML = `<i class="fab fa-instagram"></i>`;
+    } else if (aLink.href.indexOf("whatsapp") !== -1) {
+      aLink.innerHTML = `<i class="fab fa-whatsapp"></i>`;
+    } else if (aLink.href.indexOf("t.me") !== -1) {
+      aLink.innerHTML = `<i class="fab fa-telegram"></i>`;
     }
-    else if (rede.includes("github")) {
-      document.getElementById(
-        "redeSociaisHtml"
-      ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-github"></i></a>`;
-    } else if (rede.includes("linkedin")) {
-      document.getElementById(
-        "redeSociaisHtml"
-      ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-linkedin"></i></a>`;
-    } else if (rede.includes("instagram")) {
-      document.getElementById(
-        "redeSociaisHtml"
-      ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-instagram"></i></a>`;
-    } else if (rede.includes("whatsapp")) {
-      document.getElementById(
-        "redeSociaisHtml"
-      ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-whatsapp"></i></a>`;
-    } else if (rede.includes("t.me")) {
-      document.getElementById(
-        "redeSociaisHtml"
-      ).innerHTML += `<a href="${rede}" target="_blank" ><i class="fab fa-telegram"></i></a>`;
-    }
+    createLinks.appendChild(aLink);
   }
 }
 function addKnowledge() {
