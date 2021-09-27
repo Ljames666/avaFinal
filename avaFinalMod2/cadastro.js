@@ -2,27 +2,28 @@ function store() {
   var name = document.getElementById("_usernameReg").value;
   var pw = document.getElementById("_passwordReg").value;
   var pw2 = document.getElementById("_repeatPassReg").value;
+  // var email = /^(?=@)/;
   var lowerCaseLetters = /[a-z]/g;
   var upperCaseLetters = /[A-Z]/g;
   var numbers = /[0-9]/g;
-  var simbols = /^(?=.*[@!#$%^&*()])/;
+  var simbols = /(?=.*[@!#$%^&*_()])/;
   var userList = [];
-  if (name.length == 0 && !name.match("@")) {
+  if (name.length == 0) {
     alert("Por favor, preencha o e-mail!", "danger");
+  } else if (!name.match(/\S+@\S+\.\S+/)) {
+    alert("Preencha o e-mail da forma correta!", "warning");
   } else if (pw.length == 0) {
     alert("Por favor, preencha o password!", "danger");
-  } else if (name.length == 0 && pw.length == 0) {
-    alert("Por favor, preencha o email and password!", "danger");
-  } else if (pw.length < 6 && pw.length > 12) {
-    alert("Min de 6 e max de 8  caracteres!", "danger");
+  } else if (pw.length < 8) {
+    alert("Min de  8  caracteres!", "warning");
   } else if (!pw.match(numbers)) {
-    alert("Por favor add 1 number", "danger");
+    alert("Por favor add 1 número", "warning");
   } else if (!pw.match(upperCaseLetters)) {
-    alert("Por favor add 1 letra maiúscula!", "danger");
+    alert("Por favor add 1 letra maiúscula!", "warning");
   } else if (!pw.match(lowerCaseLetters)) {
-    alert("Por favor add 1 letra minúscula!", "danger");
+    alert("Por favor add 1 letra minúscula!", "warning");
   } else if (!pw.match(simbols)) {
-    alert("Por favor add 1 caractere! ", "danger");
+    alert("Por favor add 1 caractere especial! ", "warning");
   } else if (pw != pw2) {
     alert("Senhas não confere!", "danger");
   } else {
