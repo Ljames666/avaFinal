@@ -10,7 +10,7 @@ function check() {
   };
   let userList = JSON.parse(localStorage.getItem("userList") || "null");
   if (!userList) {
-    alert("Usuário inexistente", "danger!");
+    alert("Usuário inexistente!", "danger");
     window.location.href = "cadastro.html";
   }
   userList.forEach((item) => {
@@ -36,7 +36,7 @@ function check() {
     localStorage.setItem("token", token);
     localStorage.setItem("userLogon", JSON.stringify(userLogon));
   } else {
-    alert("Usuário inexistente ou erro de login", "danger!");
+    alert("Usuário inexistente ou erro de login!", "danger");
     console.log("Usuário inexistente ou erro de login");
   }
 }
