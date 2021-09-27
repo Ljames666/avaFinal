@@ -1,12 +1,8 @@
-entrar();
-function entrar() {
-  let userLogon = JSON.parse(localStorage.getItem("userLogon"));
-  if (localStorage.getItem("token") == null) {
-    alert("Você precisa estar logado para acessar essa página", "danger");
-    window.location.href = "index.html";
-  } else {
-    alert(`${userLogon.user} bem vindo!`, "success");
-  }
+if (localStorage.getItem("token") == null) {
+  alert("Você precisa estar logado para acessar essa página", "danger");
+  window.location.href = "index.html";
+} else {
+  alert(`Seja bem vindo!`, "success");
 }
 
 function sair() {
@@ -116,19 +112,16 @@ function updateScraps() {
   localStorage.setItem("userLogon", JSON.stringify(userLogon));
   printTable();
 }
-
-var alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+printTable();
 
 function alert(message, type) {
-  var wrapper = document.createElement("div");
+  let alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+  let wrapper = document.createElement("div");
   wrapper.innerHTML +=
     '<div class="alert alert-' +
     type +
     ' alert-dismissible" role="alert">' +
     message +
     '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
-
   alertPlaceholder.appendChild(wrapper);
 }
-
-printTable();
