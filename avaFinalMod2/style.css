@@ -18,3 +18,18 @@ img {
   font-weight: bold;
   color: #6c757d;
 }
+
+.popover-header {
+  background-color: #198754; 
+  border-color: transparent;
+  color: whitesmoke;
+  font-weight: bold;
+}
+.popover {
+  border-color: transparent;
+  background-color: #fdfcfc;
+}
+.popover-body {
+  font-weight: bold;
+  color: #6c757d;
+}
