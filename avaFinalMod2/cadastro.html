@@ -95,7 +95,16 @@
             <div class="col-6">
               <label class="visually-hidden" for="_usernameReg">Username</label>
 
-              <input type="email" class="form-control" id="_usernameReg" placeholder="Username" />
+              <input
+                type="email"
+                class="form-control"
+                id="_usernameReg"
+                placeholder="E-mail"
+                data-bs-toggle="popover"
+                data-bs-trigger="focus"
+                title="Digite seu e-mail"
+                data-bs-content="Este campo deve ser preenchido na forma do modelo: exemplo@exemplo.com  exemplo@exemplo.com.br"
+              />
               <br />
               <label class="visually-hidden" for="_passwordReg">Password</label>
               <input
@@ -103,6 +112,14 @@
                 class="form-control"
                 id="_passwordReg"
                 placeholder="Password"
+                data-bs-toggle="popover"
+                data-bs-trigger="focus"
+                title="Digite seu password"
+                data-bs-content="Mínimo 8 caracteres e conter pelo menos 1:
+                 número (0-9)
+                  /  letra maiúscula (A-Z) 
+                  / letra minúscula (a-z) 
+                  / caractere especial (@!#$%^&*_()) "
               />
               <br />
               <label class="visually-hidden" for="_repeatPassReg">Repeat Password</label>
@@ -111,6 +128,10 @@
                 class="form-control"
                 id="_repeatPassReg"
                 placeholder="Repeat Password"
+                data-bs-toggle="popover"
+                data-bs-trigger="focus"
+                title="Repita o password"
+                data-bs-content="Importante digitar igual o campo acima para validar seu cadastro"
               />
             </div>
 
