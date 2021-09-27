@@ -35,9 +35,15 @@ function check() {
 
     localStorage.setItem("token", token);
     localStorage.setItem("userLogon", JSON.stringify(userLogon));
+  } else if (userName != userLogon.user && userPw != userLogon.password) {
+    alert("Erro de login,tente novamente!", "danger");
+    console.log(" erro de login");
   } else {
-    alert("Usuário inexistente ou erro de login!", "danger");
-    console.log("Usuário inexistente ou erro de login");
+    alert("Usuário inexistente !", "danger");
+    console.log("Usuário inexistente ");
+    setTimeout(() => {
+      window.location.href = "cadastro.html";
+    }, 2000);
   }
 }
 var alertPlaceholder = document.getElementById("liveAlertPlaceholder");
